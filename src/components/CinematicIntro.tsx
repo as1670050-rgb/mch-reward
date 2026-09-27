@@ -6,14 +6,14 @@ interface CinematicIntroProps {
 }
 
 export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) => {
-  // 2-Second Sequence:
-  // Phase 0: Black Hole & Cosmic Universe (0 - 650ms)
-  // Phase 1: Letters M, C, H emerge with motion blur (650ms)
-  // Phase 2: Letters lock together into "MCH" in the center (1050ms)
-  // Phase 3: "HOSPITAL" appears with circular light & animated underline (1450ms)
-  // Phase 4: Soft cinematic flash (1750ms)
-  // Phase 5: Smooth fade into medical ice teal (1950ms)
-  // onComplete fires at 2000ms
+  // Balanced 3-Second Sequence:
+  // Phase 0: Black Hole & Cosmic Universe (0 - 950ms)
+  // Phase 1: Letters M, C, H emerge with cosmic sweep (950ms)
+  // Phase 2: Letters lock together into "MCH" in center with cyan/teal radiance (1550ms)
+  // Phase 3: "HOSPITAL" appears with circular halo pulse & animated underline (2150ms)
+  // Phase 4: Soft cinematic flash (2600ms)
+  // Phase 5: Smooth medical ice-teal fade (2850ms)
+  // onComplete fires at exactly 3000ms (3.0 seconds)
   const [phase, setPhase] = useState<number>(0);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -59,7 +59,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
     }
 
     // 2. Generate Infalling Cosmic Matter Particles for Black Hole
-    const particleCount = 70;
+    const particleCount = 75;
     const particles: Array<{
       angle: number;
       distance: number;
@@ -74,7 +74,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
       particles.push({
         angle: Math.random() * Math.PI * 2,
         distance: Math.random() * 220 + 70,
-        speed: (Math.random() * 0.04 + 0.025),
+        speed: Math.random() * 0.035 + 0.02,
         radius: Math.random() * 2 + 0.8,
         color: particleColors[Math.floor(Math.random() * particleColors.length)],
         alpha: Math.random() * 0.8 + 0.2,
@@ -121,7 +121,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
       // Draw Black Hole Infalling Swirling Particles
       for (const p of particles) {
         p.angle += p.speed;
-        p.distance -= 0.6;
+        p.distance -= 0.65;
         if (p.distance < 45) {
           p.distance = Math.random() * 120 + 170;
           p.angle = Math.random() * Math.PI * 2;
@@ -152,20 +152,20 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
     };
   }, []);
 
-  // Total 2-Second Sequence
+  // Exactly 3-Second Sequence
   useEffect(() => {
-    // 0 -> 1: At 650ms, letters enter
-    const t1 = setTimeout(() => setPhase(1), 650);
-    // 1 -> 2: At 1050ms, MCH combine in center
-    const t2 = setTimeout(() => setPhase(2), 1050);
-    // 2 -> 3: At 1450ms, HOSPITAL appears with underline
-    const t3 = setTimeout(() => setPhase(3), 1450);
-    // 3 -> 4: At 1750ms, Soft cinematic flash
-    const t4 = setTimeout(() => setPhase(4), 1750);
-    // 4 -> 5: At 1950ms, Fade into main app
-    const t5 = setTimeout(() => setPhase(5), 1950);
-    // Complete callback at exactly 2000ms
-    const t6 = setTimeout(() => onComplete(), 2000);
+    // 0 -> 1: At 950ms, letters emerge
+    const t1 = setTimeout(() => setPhase(1), 950);
+    // 1 -> 2: At 1550ms, MCH combine in center
+    const t2 = setTimeout(() => setPhase(2), 1550);
+    // 2 -> 3: At 2150ms, HOSPITAL appears with underline
+    const t3 = setTimeout(() => setPhase(3), 2150);
+    // 3 -> 4: At 2600ms, Soft cinematic flash
+    const t4 = setTimeout(() => setPhase(4), 2600);
+    // 4 -> 5: At 2850ms, Fade into main app
+    const t5 = setTimeout(() => setPhase(5), 2850);
+    // Complete callback at exactly 3000ms (3.0 seconds)
+    const t6 = setTimeout(() => onComplete(), 3000);
 
     return () => {
       clearTimeout(t1);
@@ -187,20 +187,20 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
           : 'bg-[#020408]'
       }`}
       style={{
-        transition: 'background-color 450ms ease, opacity 400ms ease',
+        transition: 'background-color 550ms ease, opacity 500ms ease',
       }}
     >
       {/* 1. Deep Space Universe & Particle Canvas */}
       <canvas
         ref={canvasRef}
-        className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${
+        className={`absolute inset-0 pointer-events-none transition-opacity duration-600 ${
           phase >= 5 ? 'opacity-0' : 'opacity-100'
         }`}
       />
 
       {/* 2. MESMERIZING BLACK HOLE CENTER ANIMATION */}
       <div
-        className={`absolute z-10 pointer-events-none flex items-center justify-center transition-all duration-500 ${
+        className={`absolute z-10 pointer-events-none flex items-center justify-center transition-all duration-600 ${
           phase >= 4
             ? 'opacity-0 scale-150'
             : phase >= 2
@@ -269,7 +269,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
           style={{
             background:
               'radial-gradient(circle, rgba(22, 124, 132, 0.35) 0%, rgba(221, 244, 244, 0.1) 50%, transparent 70%)',
-            animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+            animation: 'ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite',
           }}
         />
       )}
@@ -285,11 +285,11 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
         <div className="flex items-center justify-center font-heading font-extrabold tracking-tight text-6xl sm:text-7xl md:text-8xl select-none">
           {/* Letter M - Sweeps from Left with motion blur */}
           <div
-            className={`inline-block transition-all duration-400 ${
+            className={`inline-block transition-all duration-500 ${
               phase === 0
                 ? 'opacity-0 -translate-x-36 blur-md'
                 : phase === 1
-                ? 'opacity-90 -translate-x-4 blur-xs'
+                ? 'opacity-90 -translate-x-3 blur-xs'
                 : 'opacity-100 translate-x-0 blur-0'
             }`}
             style={{
@@ -305,11 +305,11 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
 
           {/* Letter C - Surges from Bottom with vertical motion blur */}
           <div
-            className={`inline-block transition-all duration-400 ${
+            className={`inline-block transition-all duration-500 ${
               phase === 0
                 ? 'opacity-0 translate-y-28 blur-md'
                 : phase === 1
-                ? 'opacity-90 translate-y-4 blur-xs'
+                ? 'opacity-90 translate-y-3 blur-xs'
                 : 'opacity-100 translate-y-0 blur-0'
             }`}
             style={{
@@ -326,11 +326,11 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
 
           {/* Letter H - Sweeps from Right with motion blur */}
           <div
-            className={`inline-block transition-all duration-400 ${
+            className={`inline-block transition-all duration-500 ${
               phase === 0
                 ? 'opacity-0 translate-x-36 blur-md'
                 : phase === 1
-                ? 'opacity-90 translate-x-4 blur-xs'
+                ? 'opacity-90 translate-x-3 blur-xs'
                 : 'opacity-100 translate-x-0 blur-0'
             }`}
             style={{
@@ -347,7 +347,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
 
         {/* Animated Underline */}
         <div
-          className={`h-1.5 rounded-full transition-all duration-500 mt-2.5 ${
+          className={`h-1.5 rounded-full transition-all duration-600 mt-2.5 ${
             phase >= 3 ? 'w-48 sm:w-64 opacity-100' : 'w-0 opacity-0'
           }`}
           style={{
@@ -361,7 +361,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
 
         {/* Word "HOSPITAL" */}
         <div
-          className={`transition-all duration-400 mt-3 tracking-[0.38em] uppercase font-semibold text-xs sm:text-sm md:text-base ${
+          className={`transition-all duration-500 mt-3 tracking-[0.38em] uppercase font-semibold text-xs sm:text-sm md:text-base ${
             phase >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{
@@ -375,7 +375,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onComplete }) =>
 
         {/* Medical care tagline */}
         <div
-          className={`transition-all duration-400 mt-2 text-xs tracking-wider font-medium ${
+          className={`transition-all duration-500 mt-2 text-xs tracking-wider font-medium ${
             phase >= 3 ? 'opacity-85' : 'opacity-0'
           }`}
           style={{ color: phase >= 4 ? '#167C84' : '#94A3B8' }}
