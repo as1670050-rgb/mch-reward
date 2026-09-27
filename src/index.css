@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --mch-dark-1: #05080D;
+    --mch-dark-2: #08131B;
+    --mch-dark-3: #0C2730;
+    --mch-white: #FFFFFF;
+    --mch-ice: #F6FCFC;
+    --mch-aqua-light: #E8F8F8;
+    --mch-aqua-subtle: #DDF4F4;
+    --mch-teal: #167C84;
+    --mch-teal-dark: #0F6971;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #F6FCFC;
+    color: #1E293B;
+  }
+
+  h1, h2, h3, .font-heading {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* 3D Dice Perspective and Styles */
+.dice-scene {
+  perspective: 900px;
+}
+
+.dice-cube {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform-style: preserve-3d;
+  transition: transform 1.8s cubic-bezier(0.2, 0.9, 0.3, 1.05);
+}
+
+.dice-face {
+  position: absolute;
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #ffffff, #f0f7f7);
+  box-shadow: inset 0 0 0 2px rgba(22, 124, 132, 0.18), inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 8px 18px rgba(12, 39, 48, 0.08);
+  display: grid;
+  padding: 12px;
+  backface-visibility: hidden;
+}
+
+/* Face positions in 3D space */
+.face-1 { transform: rotateY(0deg) translateZ(48px); }
+.face-6 { transform: rotateY(180deg) translateZ(48px); }
+.face-2 { transform: rotateY(90deg) translateZ(48px); }
+.face-5 { transform: rotateY(-90deg) translateZ(48px); }
+.face-3 { transform: rotateX(90deg) translateZ(48px); }
+.face-4 { transform: rotateX(-90deg) translateZ(48px); }
+
+/* Rotations to display each face on top */
+.show-1 { transform: rotateX(720deg) rotateY(720deg); }
+.show-2 { transform: rotateX(720deg) rotateY(630deg); }
+.show-3 { transform: rotateX(630deg) rotateY(720deg); }
+.show-4 { transform: rotateX(810deg) rotateY(720deg); }
+.show-5 { transform: rotateX(720deg) rotateY(810deg); }
+.show-6 { transform: rotateX(720deg) rotateY(900deg); }
+
+.pip {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #0F6971 0%, #167C84 70%, #09474D 100%);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(255, 255, 255, 0.8);
+  margin: auto;
+}
+
+/* Pip layouts for dice faces */
+.pip-1 { grid-template: 1fr / 1fr; }
+.pip-2 { grid-template: 1fr 1fr / 1fr 1fr; }
+.pip-3 { grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr; }
+.pip-4 { grid-template: 1fr 1fr / 1fr 1fr; }
+.pip-5 { grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr; }
+.pip-6 { grid-template: 1fr 1fr 1fr / 1fr 1fr; }
+
+/* Custom smooth blur animations for letters */
+@keyframes motionBlurLeft {
+  0% { transform: translateX(-150px); opacity: 0; filter: blur(12px); }
+  70% { transform: translateX(5px); opacity: 1; filter: blur(2px); }
+  100% { transform: translateX(0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes motionBlurBottom {
+  0% { transform: translateY(120px); opacity: 0; filter: blur(12px); }
+  70% { transform: translateY(-5px); opacity: 1; filter: blur(2px); }
+  100% { transform: translateY(0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes motionBlurRight {
+  0% { transform: translateX(150px); opacity: 0; filter: blur(12px); }
+  70% { transform: translateX(-5px); opacity: 1; filter: blur(2px); }
+  100% { transform: translateX(0); opacity: 1; filter: blur(0); }
+}
+
+@keyframes cinematicGlow {
+  0%, 100% { text-shadow: 0 0 15px rgba(22, 124, 132, 0.6), 0 0 30px rgba(221, 244, 244, 0.3); }
+  50% { text-shadow: 0 0 30px rgba(22, 124, 132, 0.9), 0 0 60px rgba(221, 244, 244, 0.7); }
+}
+
+@keyframes softFlash {
+  0% { opacity: 0; }
+  40% { opacity: 0.85; }
+  100% { opacity: 0; }
+}
+
+.animate-motion-left { animation: motionBlurLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-motion-bottom { animation: motionBlurBottom 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-motion-right { animation: motionBlurRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-cinematic-glow { animation: cinematicGlow 3s ease-in-out infinite; }
+.animate-soft-flash { animation: softFlash 0.7s ease-out forwards; }
+
+/* Black Hole & Universe Animation Keyframes */
+@keyframes accretionSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes accretionSpinReverse {
+  0% { transform: rotate(360deg) scale(0.96); }
+  100% { transform: rotate(0deg) scale(0.96); }
+}
+
+@keyframes lensingPulse {
+  0%, 100% {
+    box-shadow: 0 0 50px 15px rgba(22, 124, 132, 0.7),
+                0 0 100px 30px rgba(15, 105, 113, 0.4),
+                inset 0 0 40px 10px rgba(0, 0, 0, 0.95);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 75px 25px rgba(22, 124, 132, 0.9),
+                0 0 130px 45px rgba(221, 244, 244, 0.5),
+                inset 0 0 50px 15px rgba(0, 0, 0, 1);
+    transform: scale(1.04);
+  }
+}
+
+@keyframes photonRingGlow {
+  0%, 100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px #E8F8F8) drop-shadow(0 0 20px #167C84);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px #FFFFFF) drop-shadow(0 0 35px #22D3EE);
+  }
+}
+
+.animate-accretion-spin {
+  animation: accretionSpin 10s linear infinite;
+}
+
+.animate-accretion-spin-reverse {
+  animation: accretionSpinReverse 6s linear infinite;
+}
+
+.animate-lensing-pulse {
+  animation: lensingPulse 3s ease-in-out infinite;
+}
+
+.animate-photon-ring {
+  animation: photonRingGlow 2s ease-in-out infinite;
+}

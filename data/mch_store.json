@@ -1,0 +1,255 @@
+{
+  "lastUidSequence": 22,
+  "patients": [
+    {
+      "id": "p_1790543265505",
+      "name": "Pooja Kumari",
+      "uid": "MCH-2026-022",
+      "dischargeDate": "28 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-27T21:07:45.505Z"
+    },
+    {
+      "id": "p1",
+      "name": "Rahul Kumar",
+      "uid": "MCH-2026-001",
+      "dischargeDate": "26 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-26T10:00:00Z"
+    },
+    {
+      "id": "p2",
+      "name": "Priya Sharma",
+      "uid": "MCH-2026-002",
+      "dischargeDate": "26 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-26T11:15:00Z"
+    },
+    {
+      "id": "p3",
+      "name": "Amit Patel",
+      "uid": "MCH-2026-003",
+      "dischargeDate": "25 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-25T14:20:00Z"
+    },
+    {
+      "id": "p4",
+      "name": "Sunita Devi",
+      "uid": "MCH-2026-004",
+      "dischargeDate": "25 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-25T16:00:00Z"
+    },
+    {
+      "id": "p5",
+      "name": "Vikram Singh",
+      "uid": "MCH-2026-005",
+      "dischargeDate": "24 September 2026",
+      "participationStatus": "Not Included",
+      "createdAt": "2026-09-24T09:30:00Z"
+    },
+    {
+      "id": "p6",
+      "name": "Rajesh Verma",
+      "uid": "MCH-2026-006",
+      "dischargeDate": "24 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-24T12:00:00Z"
+    },
+    {
+      "id": "p7",
+      "name": "Ananya Gupta",
+      "uid": "MCH-2026-007",
+      "dischargeDate": "23 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-23T15:45:00Z"
+    },
+    {
+      "id": "p8",
+      "name": "Suresh Mehta",
+      "uid": "MCH-2026-008",
+      "dischargeDate": "23 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-23T17:10:00Z"
+    },
+    {
+      "id": "p9",
+      "name": "Kavita Joshi",
+      "uid": "MCH-2026-009",
+      "dischargeDate": "22 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-22T08:50:00Z"
+    },
+    {
+      "id": "p10",
+      "name": "Manoj Tiwari",
+      "uid": "MCH-2026-010",
+      "dischargeDate": "22 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-22T14:30:00Z"
+    },
+    {
+      "id": "p11",
+      "name": "Pooja Mishra",
+      "uid": "MCH-2026-011",
+      "dischargeDate": "21 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-21T11:00:00Z"
+    },
+    {
+      "id": "p12",
+      "name": "Deepak Yadav",
+      "uid": "MCH-2026-012",
+      "dischargeDate": "21 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-21T16:20:00Z"
+    },
+    {
+      "id": "p13",
+      "name": "Neha Chauhan",
+      "uid": "MCH-2026-013",
+      "dischargeDate": "20 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-20T10:15:00Z"
+    },
+    {
+      "id": "p14",
+      "name": "Sanjay Saxena",
+      "uid": "MCH-2026-014",
+      "dischargeDate": "20 September 2026",
+      "participationStatus": "Not Included",
+      "createdAt": "2026-09-20T13:40:00Z"
+    },
+    {
+      "id": "p15",
+      "name": "Geeta Rao",
+      "uid": "MCH-2026-015",
+      "dischargeDate": "19 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-19T09:00:00Z"
+    },
+    {
+      "id": "p16",
+      "name": "Harish Nair",
+      "uid": "MCH-2026-016",
+      "dischargeDate": "19 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-19T14:00:00Z"
+    },
+    {
+      "id": "p17",
+      "name": "Meenakshi Sen",
+      "uid": "MCH-2026-017",
+      "dischargeDate": "18 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-18T10:30:00Z"
+    },
+    {
+      "id": "p18",
+      "name": "Arvind Das",
+      "uid": "MCH-2026-018",
+      "dischargeDate": "18 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-18T15:20:00Z"
+    },
+    {
+      "id": "p19",
+      "name": "Shalini Reddy",
+      "uid": "MCH-2026-019",
+      "dischargeDate": "17 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-17T11:45:00Z"
+    },
+    {
+      "id": "p20",
+      "name": "Rohit Malhotra",
+      "uid": "MCH-2026-020",
+      "dischargeDate": "17 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-17T16:00:00Z"
+    },
+    {
+      "id": "p21",
+      "name": "Aakash Verma",
+      "uid": "MCH-2026-021",
+      "dischargeDate": "27 September 2026",
+      "participationStatus": "Included",
+      "createdAt": "2026-09-27T09:00:00Z"
+    }
+  ],
+  "draws": [
+    {
+      "id": "2026-H1",
+      "periodName": "January – June 2026",
+      "year": 2026,
+      "half": 1,
+      "status": "completed",
+      "startDate": "2026-01-01T00:00:00Z",
+      "endDate": "2026-06-30T23:59:59Z",
+      "winnerCount": 3,
+      "winners": [
+        "MCH-2026-003",
+        "MCH-2026-008",
+        "MCH-2026-015"
+      ],
+      "totalParticipants": 18,
+      "closedAt": "2026-06-30T23:59:59Z"
+    },
+    {
+      "id": "2026-H2",
+      "periodName": "July – December 2026",
+      "year": 2026,
+      "half": 2,
+      "status": "active",
+      "startDate": "2026-07-01T00:00:00Z",
+      "endDate": "2026-12-31T23:59:59Z",
+      "winnerCount": 6,
+      "winners": [
+        "MCH-2026-006",
+        "MCH-2026-004",
+        "MCH-2026-001",
+        "MCH-2026-007",
+        "MCH-2026-012",
+        "MCH-2026-017"
+      ],
+      "totalParticipants": 19
+    }
+  ],
+  "rewards": [
+    {
+      "uid": "MCH-2026-017",
+      "drawId": "2026-H2",
+      "dice1": 4,
+      "dice2": 5,
+      "discountPercentage": 9,
+      "rollDate": "2026-09-25T14:30:00Z",
+      "couponCode": "MCH-WIN-9P-X72K",
+      "couponStatus": "ACTIVE",
+      "expiryDate": "2026-12-25T23:59:59Z"
+    },
+    {
+      "uid": "MCH-2026-003",
+      "drawId": "2026-H1",
+      "dice1": 3,
+      "dice2": 5,
+      "discountPercentage": 8,
+      "rollDate": "2026-06-28T10:15:00Z",
+      "couponCode": "MCH-WIN-8P-H19B",
+      "couponStatus": "REDEEMED",
+      "expiryDate": "2026-09-28T23:59:59Z",
+      "redeemedAt": "2026-07-10T12:00:00Z"
+    },
+    {
+      "uid": "MCH-2026-001",
+      "drawId": "2026-H2",
+      "dice1": 1,
+      "dice2": 5,
+      "discountPercentage": 6,
+      "rollDate": "2026-09-27T21:12:05.151Z",
+      "couponCode": "MCH-WIN-6P-BUTH",
+      "couponStatus": "ACTIVE",
+      "expiryDate": "2026-12-26T21:12:05.151Z"
+    }
+  ]
+}

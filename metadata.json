@@ -1,0 +1,6 @@
+{
+  "name": "MCH Hospital Patient Reward & Winner Dice",
+  "description": "Official MCH Hospital Patient Reward and Six-Month Winner Dice platform with verified UID draws, physical dice animations, and digital reward coupons.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
